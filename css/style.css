@@ -951,7 +951,11 @@ nav ul li a:hover {
     max-height: 500px;
 }
 
-
+.faq-item .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
 
 /* =============== MORTGAGE CALCULATOR SPECIFIC STYLES =============== */
 .calculator-container {
