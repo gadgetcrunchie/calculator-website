@@ -161,39 +161,3 @@ function memoryRecall() {
 // Initialize display
 updateDisplay();
 
-document.addEventListener('DOMContentLoaded', function() {
-    // FAQ toggle functionality
-    const faqQuestions = document.querySelectorAll('.faq-question');
-    
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const answer = question.nextElementSibling;
-            const isOpen = question.classList.contains('active');
-            
-            // Close all other FAQs
-            faqQuestions.forEach(q => {
-                if (q !== question) {
-                    q.classList.remove('active');
-                    q.nextElementSibling.style.maxHeight = null;
-                }
-            });
-            
-            // Toggle current FAQ
-            if (isOpen) {
-                question.classList.remove('active');
-                answer.style.maxHeight = null;
-            } else {
-                question.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + 'px';
-            }
-        });
-    });
-    
-
-    // Open first FAQ by default
-    if (faqQuestions.length > 0) {
-        faqQuestions[0].classList.add('active');
-        faqQuestions[0].nextElementSibling.style.maxHeight = 
-            faqQuestions[0].nextElementSibling.scrollHeight + 'px';
-    }
-});

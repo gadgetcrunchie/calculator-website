@@ -902,26 +902,23 @@ nav ul li a:hover {
     margin: 3rem auto;
     padding: 0 2rem;
 }
-
 .faq-section h2 {
-    color: var(--primary-color);
+    color: #ff9900; /* Change as per your theme */
     text-align: center;
     margin-bottom: 2rem;
     font-size: 2rem;
 }
-
 .faq-item {
     margin-bottom: 1rem;
-    border: 1px solid var(--light-gray);
+    border: 1px solid #ddd;
     border-radius: 8px;
     overflow: hidden;
 }
-
 .faq-question {
     width: 100%;
     padding: 1.2rem;
     text-align: left;
-    background: var(--white);
+    background: #fff;
     border: none;
     cursor: pointer;
     display: flex;
@@ -929,36 +926,32 @@ nav ul li a:hover {
     align-items: center;
     font-weight: 600;
     font-size: 1rem;
-    transition: var(--transition);
+    transition: 0.3s;
 }
-
 .faq-question:hover {
-    background: var(--light-gray);
+    background: #f1f1f1;
 }
-
 .faq-question i {
-    transition: var(--transition);
+    transition: 0.3s;
 }
-
 .faq-question.active i {
     transform: rotate(180deg);
 }
-
 .faq-answer {
     padding: 0 1.2rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease;
-    background: var(--white);
+    background: #fff;
 }
-
 .faq-answer p {
     padding: 1rem 0;
 }
-
 .faq-item.active .faq-answer {
     max-height: 500px;
 }
+
+
 
 /* =============== MORTGAGE CALCULATOR SPECIFIC STYLES =============== */
 .calculator-container {
@@ -1337,3 +1330,4 @@ nav ul li a:hover {
         grid-template-columns: 1fr;
     }
 }
+

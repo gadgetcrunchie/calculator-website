@@ -139,69 +139,59 @@
                 </div>
             </div>
             
-            <div class="faqs">
-                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Is CalcPro really free to use?
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Yes, all our calculators are completely free with no hidden charges. We believe in keeping essential tools accessible to everyone without financial barriers.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How accurate are the calculations?
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Each calculator undergoes rigorous testing before release. While we strive for 100% accuracy, please <a href="contact.html">contact us</a> if you find any discrepancies so we can improve.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Can I request a new calculator?
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Absolutely! We actively welcome user suggestions through our contact form. Many of our existing tools were developed in response to user requests.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        Why don't you require accounts?
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We prioritize quick access over user tracking. Without accounts, you get immediate access to all tools without compromising your privacy.</p>
-                    </div>
-                </div>
-                
-                <div class="faq-item">
-                    <button class="faq-question">
-                        How do you maintain the service without fees?
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>We operate through non-intrusive advertising and optional premium support services. The core calculator functionality remains completely free.</p>
-                    </div>
-                </div>
-                 <div class="faq-item">
-                    <button class="faq-question">
-                        Are all calculators available worldwide? 
-                        <i class="fas fa-chevron-down"></i>
-                    </button>
-                    <div class="faq-answer">
-                        <p>Most calculators are universally applicable, but some (like our Tax Calculators) are country-specific. These are clearly marked with their applicable regions.</p>
-                    </div>
-                </div>
+            <!-- ===================== FAQ SECTION ===================== -->
+                <div class="faqs">
+    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+
+    <!-- Fitness & Health Calculators FAQs -->
+    <div class="faq-section">
+        <h3 class="faq-section-title"><i class="fas fa-heartbeat"></i> Fitness & Health Calculators - FAQs</h3>
+
+        <div class="faq-item">
+            <div class="faq-question">Is CalcPro really free to use? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Yes, all our calculators are completely free with no hidden charges. We believe in keeping essential tools accessible to everyone without financial barriers.</p>
             </div>
-            
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How accurate are the calculations? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Each calculator undergoes rigorous testing before release. While we strive for 100% accuracy, please <a href="contact.html">contact us</a> if you find any discrepancies so we can improve.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Can I request a new calculator? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Absolutely! We actively welcome user suggestions through our contact form. Many of our existing tools were developed in response to user requests.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Why don't you require accounts? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>We prioritize quick access over user tracking. Without accounts, you get immediate access to all tools without compromising your privacy.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">How do you maintain the service without fees? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>We operate through non-intrusive advertising and optional premium support services. The core calculator functionality remains completely free.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">Are all calculators available worldwide? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Most calculators are universally applicable, but some (like our Tax Calculators) are country-specific. These are clearly marked with their applicable regions.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
             <div class="development">
                 <h2><i class="fas fa-code"></i> Development Standards</h2>
                 <p>Every calculator undergoes a meticulous development process:</p>
@@ -275,6 +265,7 @@
 -->
     <script src="js/footer.js" defer></script>
     <script src="js/script.js"></script>
+    <script src="js/calculators.js"></script>
     <script>
     fetch('calculator-categories.html')
         .then(response => response.text())
