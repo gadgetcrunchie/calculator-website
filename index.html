@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcPro | Free Online Calculators</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+    <header>
+        <!-- yahan nav load hoga -->
+    <div id="header"></div>
+
+     
+    </header>
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Free Online Calculators</h1>
+                <p>Fast, comprehensive, and convenient tools for all your calculation needs</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for calculators...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+        <section class="main-calculator">
+            <div class="calculator-display" id="display">0</div>
+            <div class="calculator-buttons">
+                <button class="calc-btn function" onclick="addToDisplay('sin(')">sin</button>
+                <button class="calc-btn function" onclick="addToDisplay('cos(')">cos</button>
+                <button class="calc-btn function" onclick="addToDisplay('tan(')">tan</button>
+                <button class="calc-btn function" onclick="addToDisplay('log(')">log</button>
+                <button class="calc-btn function" onclick="addToDisplay('Rad')">Rad</button>
+                <button class="calc-btn" onclick="addToDisplay('7')">7</button>
+                <button class="calc-btn" onclick="addToDisplay('8')">8</button>
+                <button class="calc-btn" onclick="addToDisplay('9')">9</button>
+                <button class="calc-btn operator" onclick="backspace()">Back</button>
+
+                <button class="calc-btn function" onclick="addToDisplay('asin(')">sin<sup>-1</sup></button>
+                <button class="calc-btn function" onclick="addToDisplay('acos(')">cos<sup>-1</sup></button>
+                <button class="calc-btn function" onclick="addToDisplay('atan(')">tan<sup>-1</sup></button>
+                <button class="calc-btn function" onclick="addToDisplay('π')">π</button>
+                <button class="calc-btn" onclick="addToDisplay('4')">4</button>
+                <button class="calc-btn" onclick="addToDisplay('5')">5</button>
+                <button class="calc-btn" onclick="addToDisplay('6')">6</button>
+                <button class="calc-btn operator" onclick="useAns()">Ans</button>
+
+                <button class="calc-btn function" onclick="addToDisplay('^3')">x<sup>3</sup></button>
+                <button class="calc-btn function" onclick="addToDisplay('^2')">x<sup>2</sup></button>
+                <button class="calc-btn function" onclick="addToDisplay('e^')">e<sup>x</sup></button>
+                <button class="calc-btn function" onclick="addToDisplay('10^')">10<sup>x</sup></button>
+                <button class="calc-btn" onclick="addToDisplay('1')">1</button>
+                <button class="calc-btn" onclick="addToDisplay('2')">2</button>
+                <button class="calc-btn" onclick="addToDisplay('3')">3</button>
+                <button class="calc-btn operator" onclick="memoryAdd()">M+</button>
+
+                <button class="calc-btn function" onclick="addToDisplay('y√x')">y√x</button>
+                <button class="calc-btn function" onclick="addToDisplay('∛')">∛x</button>
+                <button class="calc-btn function" onclick="addToDisplay('√(')">√x</button>
+                <button class="calc-btn function" onclick="addToDisplay('ln(')">ln</button>
+                <button class="calc-btn function" onclick="addToDisplay('log(')">log</button>
+                <button class="calc-btn" onclick="addToDisplay('0')">0</button>
+                <button class="calc-btn" onclick="addToDisplay('EXP')">EXP</button>
+                <button class="calc-btn operator" onclick="addToDisplay('/')">/</button>
+                <button class="calc-btn operator" onclick="memorySubtract()">M-</button>
+
+                <button class="calc-btn" onclick="addToDisplay('(')">(</button>
+                <button class="calc-btn" onclick="addToDisplay(')')">)</button>
+                <button class="calc-btn" onclick="addToDisplay('1/')">1/x</button>
+                <button class="calc-btn" onclick="addToDisplay('%')">%</button>
+                <button class="calc-btn" onclick="factorial()">n!</button>
+                <button class="calc-btn" onclick="toggleSign()">±</button>
+                <button class="calc-btn" onclick="randomNumber()">RND</button>
+                <button class="calc-btn clear" onclick="clearDisplay()">AC</button>
+                <button class="calc-btn equals" onclick="calculate()">=</button>
+                <button class="calc-btn" onclick="memoryRecall()">MR</button>
+            </div>
+        </section>
+
+        <!-- Placeholder for calculator categories -->
+        <div id="calculator-categories-placeholder"></div>
+
+        <section class="about-section">
+        <div class="container">
+            <h1>About CalcPro</h1>
+            
+            <div class="intro">
+                <p>At CalcPro, we're dedicated to providing fast, accurate, and completely free online calculators across multiple categories. With over 150 specialized calculators in finance, health, fitness, mathematics, and more, we're your one-stop solution for all calculation needs. We're constantly expanding our collection to help you solve problems quickly and efficiently.</p>
+    
+                <p>We believe in open access to helpful tools, which is why all CalcPro calculators are 100% free with no registration required. Each calculator is meticulously coded by our team and rigorously tested for accuracy. If you find any issues, we'd love to <a href="contact.html">hear from you</a> - your feedback helps us improve.</p>
+            </div>
+            
+            <div class="mission">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>We're committed to removing the complexity from calculations by providing intuitive, reliable tools that deliver instant results. Whether you're planning your retirement, calculating medication dosages, or solving advanced equations, CalcPro delivers accurate answers with just a few clicks.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get accurate calculations in real-time without page reloads or delays</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Accessibility</h3>
+                    <p>Tools adapted for regional differences (taxes, measurements, etc.)</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock-open"></i>
+                    <h3>No Barriers</h3>
+                    <p>Completely free with no registration or paywalls</p>
+                </div>
+            </div>
+            
+             <div class="pros-cons">
+                <div class="pros">
+                    <h2><i class="fas fa-check-circle"></i> Advantages</h2>
+                    <ul>
+                        <li><strong>Comprehensive collection</strong> - Over 200 specialized calculators</li>
+                        <li><strong>Mobile-optimized</strong> - Works perfectly on all devices</li>
+                        <li><strong>Privacy-focused</strong> - No tracking of personal calculations</li>
+                        <li><strong>Educational resources</strong> - Explanations with formulas used</li>
+                        <li><strong>Constant updates</strong> - Regular addition of new tools</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Limitations</h2>
+                    <ul>
+                        <li><strong>Internet required</strong> - No offline functionality</li>
+                        <li><strong>Advanced features</strong> - Some tools have learning curves</li>
+                        <li><strong>Regional specificity</strong> - Some calculators are designed exclusively for use in certain countries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faqs">
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is CalcPro really free to use?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all our calculators are completely free with no hidden charges. We believe in keeping essential tools accessible to everyone without financial barriers.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How accurate are the calculations?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Each calculator undergoes rigorous testing before release. While we strive for 100% accuracy, please <a href="contact.html">contact us</a> if you find any discrepancies so we can improve.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I request a new calculator?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We actively welcome user suggestions through our contact form. Many of our existing tools were developed in response to user requests.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why don't you require accounts?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We prioritize quick access over user tracking. Without accounts, you get immediate access to all tools without compromising your privacy.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you maintain the service without fees?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We operate through non-intrusive advertising and optional premium support services. The core calculator functionality remains completely free.</p>
+                    </div>
+                </div>
+                 <div class="faq-item">
+                    <button class="faq-question">
+                        Are all calculators available worldwide? 
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Most calculators are universally applicable, but some (like our Tax Calculators) are country-specific. These are clearly marked with their applicable regions.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="development">
+                <h2><i class="fas fa-code"></i> Development Standards</h2>
+                <p>Every calculator undergoes a meticulous development process:</p>
+                <ol>
+                    <li>Initial research and formula verification</li>
+                    <li>Prototype development with multiple test cases</li>
+                    <li>Peer review by subject matter experts</li>
+                    <li>User interface refinement</li>
+                    <li>Public beta testing period</li>
+                    <li>Ongoing maintenance and updates</li>
+                </ol>
+                <p>We welcome feedback about any discrepancies - our team investigates all reported issues within 48 hours.</p>
+            </div>
+        </div>
+    </section>
+    </main>
+   <!-- <footer>
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3>Calculators</h3>
+                    <ul>
+                        <li><a href="#">Financial</a></li>
+                        <li><a href="#">Health & Fitness</a></li>
+                        <li><a href="#">Math</a></li>
+                        <li><a href="#">Other</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Company</h3>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Tutorials</a></li>
+                        <li><a href="#">API</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Cookie Policy</a></li>
+                        <li><a href="#">GDPR</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+                <div class="copyright">
+                    <p>© 2023 CalcPro. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+-->
+    <script src="js/footer.js" defer></script>
+    <script src="js/script.js"></script>
+    <script>
+    fetch('calculator-categories.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('calculator-categories-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading calculator categories:', error));
+    </script>
+</body>
+</html>

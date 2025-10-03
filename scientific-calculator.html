@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CalcPro | Free Online Calculators</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+    <header>
+        <!-- yahan nav load hoga -->
+        <div id="header"></div>
+    </header>
+<section class="hero">
+            <div class="hero-content">
+                <h1>Free Online Calculators</h1>
+                <p>Fast, comprehensive, and convenient tools for all your calculation needs</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for calculators...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>
+<div class="calculator-container">
+    <h1><i class="fas fa-calculator"></i> Scientific Calculator</h1>
+    
+    <div class="calculator-form">
+        <div class="calculator-display" id="calc-display">0</div>
+        
+        <div class="calculator-buttons">
+            <!-- First Row -->
+            <button class="calc-btn function" data-value="sin">sin</button>
+            <button class="calc-btn function" data-value="cos">cos</button>
+            <button class="calc-btn function" data-value="tan">tan</button>
+            <button class="calc-btn function" data-value="√">√</button>
+            <button class="calc-btn function" data-value="clear">AC</button>
+            
+            <!-- Second Row -->
+            <button class="calc-btn function" data-value="π">π</button>
+            <button class="calc-btn function" data-value="e">e</button>
+            <button class="calc-btn function" data-value="^">^</button>
+            <button class="calc-btn function" data-value="(">(</button>
+            <button class="calc-btn function" data-value=")">)</button>
+            
+            <!-- Third Row -->
+            <button class="calc-btn number" data-value="7">7</button>
+            <button class="calc-btn number" data-value="8">8</button>
+            <button class="calc-btn number" data-value="9">9</button>
+            <button class="calc-btn operator" data-value="/">/</button>
+            <button class="calc-btn function" data-value="log">log</button>
+            
+            <!-- Fourth Row -->
+            <button class="calc-btn number" data-value="4">4</button>
+            <button class="calc-btn number" data-value="5">5</button>
+            <button class="calc-btn number" data-value="6">6</button>
+            <button class="calc-btn operator" data-value="*">×</button>
+            <button class="calc-btn function" data-value="ln">ln</button>
+            
+            <!-- Fifth Row -->
+            <button class="calc-btn number" data-value="1">1</button>
+            <button class="calc-btn number" data-value="2">2</button>
+            <button class="calc-btn number" data-value="3">3</button>
+            <button class="calc-btn operator" data-value="-">-</button>
+            <button class="calc-btn function" data-value="!">!</button>
+            
+            <!-- Sixth Row -->
+            <button class="calc-btn number" data-value="0">0</button>
+            <button class="calc-btn number" data-value=".">.</button>
+            <button class="calc-btn equals" data-value="=">=</button>
+            <button class="calc-btn operator" data-value="+">+</button>
+            <button class="calc-btn function" data-value="%">%</button>
+        </div>
+    </div>
+</div>
+
+<div class="content-section">
+    <h2 class="section-title">How Scientific Calculator Works</h2>
+    <p>This advanced calculator performs both basic arithmetic and scientific calculations including trigonometric, logarithmic, and exponential functions. It's designed for students, engineers, and anyone needing advanced mathematical computations.</p>
+    
+    <div class="instructions">
+        <h3><i class="fas fa-info-circle"></i> Instructions</h3>
+        <ol>
+            <li>Use number buttons (0-9) for numeric input</li>
+            <li>Select operators (+, -, ×, ÷) for basic calculations</li>
+            <li>Access scientific functions (sin, cos, tan, log, ln, etc.) as needed</li>
+            <li>Use parentheses ( ) for complex expressions</li>
+            <li>Press equals (=) to compute results</li>
+            <li>Use AC button to clear all inputs</li>
+        </ol>
+    </div>
+    
+    <div class="pros-cons">
+        <div class="pros">
+            <h3><i class="fas fa-check-circle"></i> Advantages</h3>
+            <ul class="pros-list">
+                <li>Performs both basic and advanced calculations</li>
+                <li>Includes essential scientific functions</li>
+                <li>Handles complex expressions with parentheses</li>
+                <li>User-friendly interface with clear display</li>
+                <li>Instant computation of results</li>
+            </ul>
+        </div>
+        
+        <div class="cons">
+            <h3><i class="fas fa-exclamation-circle"></i> Limitations</h3>
+            <ul class="cons-list">
+                <li>Doesn't support graphing functions</li>
+                <li>Limited to single-line display (no history)</li>
+                <li>No matrix or vector calculations</li>
+                <li>Doesn't save previous calculations</li>
+                <li>No programming/custom function capability</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="faqs">
+        <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I calculate trigonometric functions? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Enter the angle value, then press the sin, cos, or tan button. The calculator uses degrees for trigonometric calculations.</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">Can I calculate expressions with multiple operations? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Yes, you can use parentheses to group operations. For example: (2+3)×(4-1)</p>
+            </div>
+        </div>
+        
+        <div class="faq-item">
+            <div class="faq-question">How do I calculate exponents or roots? <i class="fas fa-chevron-down"></i></div>
+            <div class="faq-answer">
+                <p>Use the ^ button for exponents (e.g., 2^3 for 2³) and the √ button for square roots. For other roots, use exponents (e.g., 8^(1/3) for cube root of 8).</p>
+            </div>
+        </div>
+    </div>
+</div>
+<main>
+        <!-- Placeholder for calculator categories -->
+        <div id="calculator-categories-placeholder"></div>
+
+        <section class="about-section">
+        <div class="container">
+            <h1>About CalcPro</h1>
+            
+            <div class="intro">
+                <p>CalcPro offers an extensive collection of digital calculation tools designed to simplify complex computations across multiple disciplines. Our platform features specialized calculators for financial planning, health metrics, academic work, and everyday math needs, all available without cost or registration barriers.</p>
+                
+                <p>What began as a simple calculator project has grown into a comprehensive suite of over 200 specialized tools, with new additions regularly incorporated based on user feedback and emerging needs.</p>
+            </div>
+            
+            <div class="mission">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>We're committed to removing the complexity from calculations by providing intuitive, reliable tools that deliver instant results. Whether you're planning your retirement, calculating medication dosages, or solving advanced equations, CalcPro delivers accurate answers with just a few clicks.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get accurate calculations in real-time without page reloads or delays</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Accessibility</h3>
+                    <p>Tools adapted for regional differences (taxes, measurements, etc.)</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock-open"></i>
+                    <h3>No Barriers</h3>
+                    <p>Completely free with no registration or paywalls</p>
+                </div>
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h2><i class="fas fa-check-circle"></i> Advantages</h2>
+                    <ul>
+                        <li><strong>Comprehensive collection</strong> - Over 200 specialized calculators</li>
+                        <li><strong>Mobile-optimized</strong> - Works perfectly on all devices</li>
+                        <li><strong>Privacy-focused</strong> - No tracking of personal calculations</li>
+                        <li><strong>Educational resources</strong> - Explanations with formulas used</li>
+                        <li><strong>Constant updates</strong> - Regular addition of new tools</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Limitations</h2>
+                    <ul>
+                        <li><strong>Internet required</strong> - No offline functionality</li>
+                        <li><strong>Advanced features</strong> - Some tools have learning curves</li>
+                        <li><strong>Regional specificity</strong> - Some calculators are designed exclusively for use in certain countries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="faqs">
+                <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is CalcPro really free to use?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, all our calculators are completely free with no hidden charges. We believe in keeping essential tools accessible to everyone without financial barriers.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How accurate are the calculations?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We implement industry-standard formulas and algorithms, with each calculator undergoing rigorous testing. For financial tools, we clearly indicate when estimates are involved rather than exact calculations.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Can I request a new calculator?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! We actively welcome user suggestions through our contact form. Many of our existing tools were developed in response to user requests.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Why don't you require accounts?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We prioritize quick access over user tracking. Without accounts, you get immediate access to all tools without compromising your privacy.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question">
+                        How do you maintain the service without fees?
+                        <i class="fas fa-chevron-down"></i>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We operate through non-intrusive advertising and optional premium support services. The core calculator functionality remains completely free.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="development">
+                <h2><i class="fas fa-code"></i> Development Standards</h2>
+                <p>Every calculator undergoes a meticulous development process:</p>
+                <ol>
+                    <li>Initial research and formula verification</li>
+                    <li>Prototype development with multiple test cases</li>
+                    <li>Peer review by subject matter experts</li>
+                    <li>User interface refinement</li>
+                    <li>Public beta testing period</li>
+                    <li>Ongoing maintenance and updates</li>
+                </ol>
+                <p>We welcome feedback about any discrepancies - our team investigates all reported issues within 48 hours.</p>
+            </div>
+        </div>
+    </section>
+    </main>
+    <script src="js/footer.js" defer></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    fetch('calculator-categories.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('calculator-categories-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading calculator categories:', error));
+    </script>
+</body>
+</html>

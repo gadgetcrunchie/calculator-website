@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Mortgage Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header>
+        <!-- yahan nav load hoga -->
+        <div id="header"></div>
+    </header>
+    <section class="hero">
+            <div class="hero-content">
+                <h1>Free Online Calculators</h1>
+                <p>Fast, comprehensive, and convenient tools for all your calculation needs</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for calculators...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+    </section>
+     <main>
+        <div class="calculator-container">
+            <h2><i class="fas fa-home"></i> Mortgage Calculator</h2>
+            
+            <div class="calculator-form">
+                <div class="input-group">
+                    <label for="loan-amount">Loan Amount ($)</label>
+                    <input type="number" id="loan-amount" placeholder="300,000">
+                </div>
+                
+                <div class="input-group">
+                    <label for="down-payment">Down Payment ($)</label>
+                    <input type="number" id="down-payment" placeholder="60,000">
+                </div>
+                
+                <div class="input-group">
+                    <label for="interest-rate">Interest Rate (%)</label>
+                    <input type="number" id="interest-rate" step="0.01" placeholder="3.5">
+                </div>
+                
+                <div class="input-group">
+                    <label for="loan-term">Loan Term (years)</label>
+                    <select id="loan-term">
+                        <option value="15">15 Years</option>
+                        <option value="30" selected>30 Years</option>
+                    </select>
+                </div>
+                
+                <button id="mortgage-calculate-btn" class="btn btn-primary">Calculate Mortgage</button>
+            </div>
+            
+            <div class="calculator-result" id="mortgage-result" style="display: none;">
+                    <h3>Monthly Payment</h3>
+                <div class="payment-amount" id="monthly-payment">$1,347.13</div>
+                
+                <div class="breakdown">
+                    <div class="breakdown-item">
+                        <span>Principal & Interest</span>
+                        <span id="principal-interest">$1,347.13</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Total Interest Paid</span>
+                        <span id="total-interest">$184,968.00</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span>Total Cost of Loan</span>
+                        <span id="total-cost">$484,968.00</span>
+                    </div>
+                    <div class="breakdown-item total">
+                        <span>Total Payments (360)</span>
+                        <span id="total-payments">$484,968.00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="content-section">
+            <h2 class="section-title">How Mortgage Calculator Works</h2>
+            <p>This calculator helps you estimate your monthly mortgage payments based on loan amount, interest rate, and loan term. It shows a complete breakdown of your payment including principal, interest, and total loan cost.</p>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h3><i class="fas fa-check-circle"></i> Advantages</h3>
+                    <ul class="pros-list">
+                        <li>Accurate monthly payment calculation</li>
+                        <li>Understand total interest paid over loan term</li>
+                        <li>Compare different loan scenarios</li>
+                        <li>Plan your budget effectively</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h3><i class="fas fa-exclamation-circle"></i> Limitations</h3>
+                    <ul class="cons-list">
+                        <li>Doesn't include property taxes or insurance</li>
+                        <li>Assumes fixed interest rate</li>
+                        <li>Doesn't account for PMI (if applicable)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+        <!-- Placeholder for calculator categories -->
+        <div id="calculator-categories-placeholder"></div>
+    <section class="about-section">
+        <div class="container">
+            <h1>About CalcPro</h1>
+            
+            <div class="intro">
+                <p>CalcPro offers an extensive collection of digital calculation tools designed to simplify complex computations across multiple disciplines. Our platform features specialized calculators for financial planning, health metrics, academic work, and everyday math needs, all available without cost or registration barriers.</p>
+                
+                <p>What began as a simple calculator project has grown into a comprehensive suite of over 200 specialized tools, with new additions regularly incorporated based on user feedback and emerging needs.</p>
+            </div>
+            
+            <div class="mission">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>We're committed to removing the complexity from calculations by providing intuitive, reliable tools that deliver instant results. Whether you're planning your retirement, calculating medication dosages, or solving advanced equations, CalcPro delivers accurate answers with just a few clicks.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get accurate calculations in real-time without page reloads or delays</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Accessibility</h3>
+                    <p>Tools adapted for regional differences (taxes, measurements, etc.)</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock-open"></i>
+                    <h3>No Barriers</h3>
+                    <p>Completely free with no registration or paywalls</p>
+                </div>
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h2><i class="fas fa-check-circle"></i> Advantages</h2>
+                    <ul>
+                        <li><strong>Comprehensive collection</strong> - Over 200 specialized calculators</li>
+                        <li><strong>Mobile-optimized</strong> - Works perfectly on all devices</li>
+                        <li><strong>Privacy-focused</strong> - No tracking of personal calculations</li>
+                        <li><strong>Educational resources</strong> - Explanations with formulas used</li>
+                        <li><strong>Constant updates</strong> - Regular addition of new tools</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Limitations</h2>
+                    <ul>
+                        <li><strong>Internet required</strong> - No offline functionality</li>
+                        <li><strong>Advanced features</strong> - Some tools have learning curves</li>
+                        <li><strong>Regional specificity</strong> - Some calculators are designed exclusively for use in certain countries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        <div class="faqs">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is BMI? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>BMI (Body Mass Index) is a numerical value calculated from your weight and height. It provides a simple way to categorize individuals as underweight, normal weight, overweight, or obese.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is BMI accurate for everyone? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>BMI is a useful screening tool but has limitations. It may not accurately reflect body fat percentage in athletes, pregnant women, or the elderly. Always consult a healthcare professional for a comprehensive health assessment.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What should I do if my BMI is high? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>If your BMI indicates overweight or obesity, consider consulting a doctor or nutritionist. They can help develop a personalized plan including diet, exercise, and lifestyle changes.</p>
+                </div>
+            </div>
+        </div>
+    </div>  
+            
+            <div class="development">
+                <h2><i class="fas fa-code"></i> Development Standards</h2>
+                <p>Every calculator undergoes a meticulous development process:</p>
+                <ol>
+                    <li>Initial research and formula verification</li>
+                    <li>Prototype development with multiple test cases</li>
+                    <li>Peer review by subject matter experts</li>
+                    <li>User interface refinement</li>
+                    <li>Public beta testing period</li>
+                    <li>Ongoing maintenance and updates</li>
+                </ol>
+                <p>We welcome feedback about any discrepancies - our team investigates all reported issues within 48 hours.</p>
+            </div>
+        </div>
+    </section>
+    <script src="js/footer.js" defer></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    fetch('calculator-categories.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('calculator-categories-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading calculator categories:', error));
+    </script>
+</body>
+</html>

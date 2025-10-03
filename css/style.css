@@ -1,0 +1,1339 @@
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #6c5ce7;
+    --accent-color: #fd7e14;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-gray: #e9ecef;
+    --medium-gray: #adb5bd;
+    --dark-gray: #495057;
+    --white: #ffffff;
+    --black: #212529;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span:first-child {
+    color: var(--primary-color);
+}
+
+.logo span:last-child {
+    color: var(--secondary-color);
+}
+
+/* ===============================
+   NAVIGATION (Default - Desktop)
+   =============================== */
+nav {
+    display: flex;
+    align-items: center;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 1rem;
+    position: relative; /* Needed for submenu */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* ===============================
+   SUBMENU (Dropdown)
+   =============================== */
+nav ul li ul.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; /* below parent */
+    left: 0;
+    background: #fff;
+    list-style: none;
+    padding: 0.5rem 0;
+    margin: 0;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    z-index: 100;
+}
+
+nav ul li ul.submenu li {
+    margin: 0;
+}
+
+nav ul li ul.submenu li a {
+    display: block;
+    padding: 0.5rem 1rem;
+    color: var(--dark-color);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+nav ul li ul.submenu li a:hover {
+    background: var(--primary-color);
+    color: var(--white);
+}
+
+/* Show submenu on hover (Desktop only) */
+nav ul li.has-submenu:hover > .submenu {
+    display: block;
+}
+
+/* ===============================
+   AUTH BUTTONS
+   =============================== */
+.auth-buttons button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    margin-left: 0.5rem;
+}
+
+.sign-in {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.sign-up {
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    color: var(--white);
+}
+
+.sign-in:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.sign-up:hover {
+    background-color: var(--secondary-color);
+    border-color: var(--secondary-color);
+}
+
+/* ===============================
+   HAMBURGER ICON
+   =============================== */
+.menu-toggle {
+    display: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--dark-color);
+    z-index: 1001; /* Always above menu */
+}
+
+/* ===============================
+   RESPONSIVE (Mobile & Tablet)
+   =============================== */
+@media (max-width: 768px) {
+    /* Hide desktop auth buttons */
+    .desktop-auth {
+        display: none;
+    }
+
+    /* Show hamburger */
+    .menu-toggle {
+        display: block;
+    }
+
+    /* Mobile Nav hidden by default */
+    nav {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #fff;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        padding: 1rem;
+        z-index: 1000;
+    }
+
+    /* Show when active */
+    nav.show {
+        display: flex;
+    }
+
+    nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    nav ul li {
+        margin: 1rem 0;
+    }
+
+    /* Submenu style in mobile (collapsible) */
+    /* Submenu default hidden */
+.submenu {
+  display: none;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+/* Open submenu */
+.has-submenu.open .submenu {
+  display: flex;
+}
+
+/* Toggle arrow */
+.submenu-toggle {
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+/* Rotate arrow when open */
+.has-submenu.open .submenu-toggle {
+  transform: rotate(90deg);
+  transition: transform 0.3s;
+}
+
+    /* Mobile auth buttons */
+    .mobile-auth {
+        margin-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+}
+
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+.search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.search-box button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.search-box button:hover {
+    background-color: #e67300;
+}
+
+.main-calculator {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.calculator-display {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    text-align: right;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    min-height: 80px;
+    word-wrap: break-word;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.calc-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--light-gray);
+    transition: var(--transition);
+}
+
+.calc-btn:hover {
+    background-color: var(--medium-gray);
+    color: var(--white);
+}
+
+.calc-btn.operator {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.calc-btn.function {
+    background-color: var(--secondary-color);
+    color: var(--white);
+}
+
+.calc-btn.equals {
+    background-color: var(--success-color);
+    color: var(--white);
+    grid-column: span 2;
+}
+
+.calc-btn.clear {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.calculator-categories {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.category {
+    margin-bottom: 3rem;
+}
+
+.category h2 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+    display: flex;
+    align-items: center;
+}
+
+.category h2 i {
+    margin-right: 0.5rem;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1rem;
+}
+
+.calculator-item {
+    background-color: var(--white);
+    padding: 1rem;
+    border-radius: 4px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-decoration: none;
+    color: var(--dark-color);
+}
+
+.calculator-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    color: var(--primary-color);
+}
+
+.about-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.about-section h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.about-section h2 {
+    color: var(--secondary-color);
+    margin: 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.about-section h2 i {
+    margin-right: 0.75rem;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.intro p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+/* =============== ROOT & GLOBAL STYLES =============== */
+:root {
+    --primary-color: #4a6bff;
+    --secondary-color: #6c5ce7;
+    --accent-color: #fd7e14;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --info-color: #17a2b8;
+    --warning-color: #ffc107;
+    --danger-color: #dc3545;
+    --light-gray: #e9ecef;
+    --medium-gray: #adb5bd;
+    --dark-gray: #495057;
+    --white: #ffffff;
+    --black: #212529;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background-color: var(--light-color);
+}
+
+/* =============== COMMON COMPONENTS (All Pages) =============== */
+/* Header & Navigation */
+header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.logo span:first-child {
+    color: var(--primary-color);
+}
+
+.logo span:last-child {
+    color: var(--secondary-color);
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li {
+    margin: 0 1rem;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 500;
+    transition: var(--transition);
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+/* Buttons */
+.btn {
+    padding: 0.8rem 1.5rem;
+    border-radius: 4px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 1rem;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.btn-primary:hover {
+    background-color: var(--secondary-color);
+}
+
+.btn-outline {
+    background-color: transparent;
+    border: 1px solid var(--primary-color);
+    color: var(--primary-color);
+}
+
+.btn-outline:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+/* =============== INDEX PAGE SPECIFIC =============== */
+/* Hero Section (Only for index.html) */
+.index-hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--white);
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.index-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.index-hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: white;
+}
+
+.index-hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    color: white;
+}
+
+.index-search-box {
+    display: flex;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.index-search-box input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 4px 0 0 4px;
+    font-size: 1rem;
+}
+
+.index-search-box button {
+    background-color: var(--accent-color);
+    color: var(--white);
+    border: none;
+    padding: 0 1.5rem;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.index-search-box button:hover {
+    background-color: #e67300;
+}
+
+/* =============== CALCULATOR PAGES COMMON STYLES =============== */
+.calculator-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.calculator-title {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calculator-form {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.calculator-result {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+/* =============== BMI CALCULATOR SPECIFIC =============== */
+/* BMI Result Section Styling */
+.calculator-result {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    margin-top: 30px;
+}
+
+.result-card {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.result-title {
+    color: #2c3e50;
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Grid Layout for Results */
+.result-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 20px;
+    margin-bottom: 25px;
+}
+
+.classification-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1px;
+    background: #e0e0e0;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.grid-header {
+    background: #3498db;
+    color: white;
+    padding: 12px 15px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.grid-item {
+    padding: 12px 15px;
+    background: white;
+    display: flex;
+    align-items: center;
+}
+
+.grid-item.label {
+    font-weight: 600;
+    color: #7f8c8d;
+}
+
+.grid-item.value {
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* Category Specific Styles */
+.cat.underweight { color: #3498db; }
+.cat.normal { color: #2ecc71; }
+.cat.overweight { color: #f39c12; }
+.cat.obese { color: #e74c3c; }
+
+.status-indicator {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.status-indicator.underweight { background-color: #3498db; }
+.status-indicator.normal { background-color: #2ecc71; }
+.status-indicator.overweight { background-color: #f39c12; }
+.status-indicator.obese { background-color: #e74c3c; }
+
+.result-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #ddd;
+}
+
+.health-tip {
+    font-style: italic;
+    color: #7f8c8d;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.health-tip i {
+    color: #e74c3c;
+}
+.underweight { color: var(--danger-color); font-weight: 500; }
+.normal { color: var(--success-color); font-weight: 500; }
+.overweight { color: var(--warning-color); font-weight: 500; }
+.obese { color: var(--danger-color); font-weight: 500; }
+
+/* =============== COMMON CONTENT SECTIONS =============== */
+.content-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--light-gray);
+}
+.pros-cons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+
+@media (max-width: 768px) {
+    .pros-cons {
+        grid-template-columns: 1fr;
+    }
+}
+
+.pros ul, .cons ul {
+    list-style: none;
+}
+
+.pros li, .cons li {
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.pros li::before {
+    content: "✓";
+    color: var(--success-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.cons li::before {
+    content: "!";
+    color: var(--warning-color);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.pros h2 {
+    color: var(--success-color);
+}
+
+.cons h2 {
+    color: var(--warning-color);
+}
+
+
+/* =============== RESPONSIVE ADJUSTMENTS =============== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        padding: 1rem;
+    }
+    
+    nav ul {
+        margin: 1rem 0;
+    }
+    
+    .calculator-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* =============== FAQ SECTION (INDEX + OTHER PAGES) =============== */
+.faq-section {
+    max-width: 1200px;
+    margin: 3rem auto;
+    padding: 0 2rem;
+}
+
+.faq-section h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+
+.faq-item {
+    margin-bottom: 1rem;
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    padding: 1.2rem;
+    text-align: left;
+    background: var(--white);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.faq-question:hover {
+    background: var(--light-gray);
+}
+
+.faq-question i {
+    transition: var(--transition);
+}
+
+.faq-question.active i {
+    transform: rotate(180deg);
+}
+
+.faq-answer {
+    padding: 0 1.2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+    background: var(--white);
+}
+
+.faq-answer p {
+    padding: 1rem 0;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+/* =============== MORTGAGE CALCULATOR SPECIFIC STYLES =============== */
+.calculator-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: var(--white);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+.calculator-container h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.calculator-form {
+    background: var(--light-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.input-group input:focus,
+.input-group select:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.2);
+}
+
+#calculate-btn {
+    margin-top: 1rem;
+}
+
+.calculator-result {
+    text-align: center;
+    padding: 1.5rem;
+    background: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.payment-amount {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 1rem 0;
+}
+
+.breakdown {
+    margin-top: 1.5rem;
+    text-align: left;
+}
+
+.breakdown-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--light-gray);
+}
+
+.breakdown-item.total {
+    font-weight: 700;
+    border-top: 2px solid var(--primary-color);
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 600px) {
+    .calculator-container {
+        padding: 1rem;
+    }
+    
+    .payment-amount {
+        font-size: 2rem;
+    }
+}
+
+/* =============== SCIENTIFIC CALCULATOR STYLES =============== */
+.calculator-display {
+    background-color: var(--light-gray);
+    padding: 1.5rem;
+    text-align: right;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    min-height: 80px;
+    word-wrap: break-word;
+    font-family: 'Courier New', monospace;
+}
+
+.calculator-buttons {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.5rem;
+}
+
+.calc-btn {
+    padding: 1rem;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: var(--light-gray);
+    transition: var(--transition);
+    font-weight: 500;
+}
+
+.calc-btn:hover {
+    background-color: var(--medium-gray);
+    color: var(--white);
+}
+
+.calc-btn.number {
+    background-color: var(--white);
+    border: 1px solid var(--light-gray);
+}
+
+.calc-btn.number:hover {
+    background-color: var(--light-gray);
+}
+
+.calc-btn.operator {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
+.calc-btn.operator:hover {
+    background-color: var(--secondary-color);
+}
+
+.calc-btn.function {
+    background-color: var(--secondary-color);
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.calc-btn.function:hover {
+    background-color: var(--primary-color);
+}
+
+.calc-btn.equals {
+    background-color: var(--success-color);
+    color: var(--white);
+    grid-column: span 1;
+}
+
+.calc-btn.equals:hover {
+    background-color: #218838;
+}
+
+.calc-btn.clear {
+    background-color: var(--danger-color);
+    color: var(--white);
+}
+
+.calc-btn.clear:hover {
+    background-color: #c82333;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .calculator-buttons {
+        grid-template-columns: repeat(4, 1fr);
+    }
+    
+    .calc-btn.equals {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator-buttons {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .calc-btn.function {
+        font-size: 0.8rem;
+        padding: 0.8rem;
+    }
+}
+
+/* =============== ABOUT PAGE STYLES =============== */
+.about-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.about-section h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.about-section h2 {
+    color: var(--secondary-color);
+    margin: 2rem 0 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.about-section p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    transition: var(--transition);
+    text-align: center;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.feature-card h3 {
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+/* =============== CONTACT PAGE STYLES =============== */
+.contact-section {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 2rem;
+}
+
+.contact-section h1 {
+    color: var(--primary-color);
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-info {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-form {
+    background: var(--white);
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item i {
+    color: var(--primary-color);
+    font-size: 1.2rem;
+    width: 30px;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.social-links a {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+
+.social-links a:hover {
+    color: var(--secondary-color);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: var(--dark-gray);
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1px solid var(--medium-gray);
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 107, 255, 0.2);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}

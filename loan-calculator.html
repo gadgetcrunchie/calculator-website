@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+    <header>
+        <!-- yahan nav load hoga -->
+        <div id="header"></div>
+    </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Free Online Calculators</h1>
+                <p>Fast, comprehensive, and convenient tools for all your calculation needs</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for calculators...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+        </section>        
+    <main>
+        <section class="calculator-container">
+            <h2><i class="fas fa-home"></i>Amortized Loan</h2>
+            <p>Calculate regular payments for loans like mortgages, auto loans, or personal loans.</p>
+            <div class="input-group"><form id="amortizedForm">
+                <label>Loan Amount: <input type="number" id="amLoanAmount" value="100000"></label>
+                <label>Term (years): <input type="number" id="amLoanTerm" value="10"></label>
+                <label>Interest Rate (%): <input type="number" id="amInterestRate" value="6"></label>
+                <button id="mortgage-calculate-btn" class="btn btn-primary">Calculate</button>
+            </form></div>
+            <div class="results" id="amResults"></div>
+        </section>
+
+        <section class="calculator-container">
+            <h2><i class="fas fa-home"></i>Deferred Payment Loan</h2>
+            <p>Single lump sum due at the end of the loan period.</p>
+            <div class="input-group"><form id="deferredForm">
+                <label>Loan Amount: <input type="number" id="deLoanAmount" value="100000"></label>
+                <label>Term (years): <input type="number" id="deLoanTerm" value="10"></label>
+                <label>Interest Rate (%): <input type="number" id="deInterestRate" value="6"></label>
+                <button id="mortgage-calculate-btn" class="btn btn-primary">Calculate</button>
+            </form></div>
+            <div class="results" id="deResults"></div>
+        </section>
+
+        <section class="calculator-container">
+            <h2><i class="fas fa-home"></i>Bond</h2>
+            <p>Calculate initial investment needed for a predetermined amount at maturity.</p>
+            <div class="input-group"><form id="bondForm">
+                <label>Future Amount: <input type="number" id="bondFuture" value="100000"></label>
+                <label>Term (years): <input type="number" id="bondTerm" value="10"></label>
+                <label>Interest Rate (%): <input type="number" id="bondRate" value="6"></label>
+                <button id="mortgage-calculate-btn" class="btn btn-primary">Calculate</button>
+            </form></div>
+            <div class="results" id="bondResults"></div>
+        </section>
+    </main>
+    <section class="calculator-categories">
+            <div class="category">
+                <h2><i class="fas fa-coins"></i>Financial Calculators</h2>
+                <div class="calculator-grid">
+                    <a href="Mortgage-Calculator.html" class="calculator-item">Mortgage Calculator</a>
+                    <a href="loan-calculator.html" class="calculator-item">Laon Calculator</a>  
+                </div>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-heartbeat"></i> Fitness & Health Calculators</h2>
+                <div class="calculator-grid">
+                    <a href="bmi-calculator.html" class="calculator-item">BMI Calculator</a>
+                    
+                </div>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-square-root-alt"></i> Math Calculators</h2>
+                <div class="calculator-grid">
+                    <a href="scientific-calculator.html" class="calculator-item">Scientific Calculator</a>
+                    
+                </div>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-calculator"></i> Other Calculators</h2>
+                <div class="calculator-grid">
+                    <a href="#" class="calculator-item">Age Calculator</a>
+                    
+                </div>
+            </div>
+        </section>
+    <script src="js/footer.js" defer></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    fetch('calculator-categories.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('calculator-categories-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading calculator categories:', error));
+    </script>
+</body>
+</html>

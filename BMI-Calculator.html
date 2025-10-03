@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern BMI Calculator</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/footer.css">
+
+</head>
+<body>
+    <header>
+        <!-- yahan nav load hoga -->
+        <div id="header"></div>
+    </header>
+    <section class="hero">
+            <div class="hero-content">
+                <h1>Free Online Calculators</h1>
+                <p>Fast, comprehensive, and convenient tools for all your calculation needs</p>
+                <div class="search-box">
+                    <input type="text" placeholder="Search for calculators...">
+                    <button><i class="fas fa-search"></i></button>
+                </div>
+            </div>
+    </section>
+    <main>
+    <div class="calculator-container">
+        <h1><i class="fas fa-weight"></i> BMI Calculator</h1>
+        
+        <div class="calculator-form">
+            <div class="unit-selector">
+                <button id="bmi-calculate-btn" class="btn btn-primary" data-unit="metric">Metric (kg/cm)</button>
+                <button id="bmi-calculate-btn" class="btn btn-primary" data-unit="imperial">Imperial (lbs/ft-in)</button>
+            </div>
+
+            <!-- Metric Units -->
+            <div class="input-group metric-unit">
+                <label for="height-cm">Height (cm)</label>
+                <input type="number" id="height-cm" placeholder="Enter height in cm">
+            </div>
+            
+            <div class="input-group metric-unit">
+                <label for="weight-kg">Weight (kg)</label>
+                <input type="number" id="weight-kg" placeholder="Enter weight in kg">
+            </div>
+            
+            <!-- Imperial Units -->
+            <div class="input-group imperial-unit" style="display: none;">
+                <label>Height (ft & in)</label>
+                <div class="height-input">
+                    <input type="number" id="height-ft" placeholder="Feet" min="0">
+                    <input type="number" id="height-in" placeholder="Inches" min="0" max="11">
+                </div>
+            </div>
+            
+            <div class="input-group imperial-unit" style="display: none;">
+                <label for="weight-lbs">Weight (lbs)</label>
+                <input type="number" id="weight-lbs" placeholder="Enter weight in lbs">
+            </div>
+            
+            <button id="bmi-calculate-btn" class="btn btn-primary">Calculate BMI</button>
+        </div>
+        
+        <div class="calculator-result" id="bmi-result" style="display: none;">
+    <div class="result-card">
+        <h3 class="result-title"><i class="fas fa-chart-line"></i> Your BMI Results</h3>
+        
+        <div class="result-grid">
+            <!-- Row 1 -->
+            <div class="grid-item label">BMI Value:</div>
+            <div class="grid-item value" id="bmi-value">0</div>
+            
+            <div class="grid-item label">Category:</div>
+            <div class="grid-item value" id="bmi-category">-</div>
+            
+            <!-- Row 2 -->
+            <div class="grid-item label">Height:</div>
+            <div class="grid-item value" id="bmi-height">-</div>
+            
+            <div class="grid-item label">Weight:</div>
+            <div class="grid-item value" id="bmi-weight">-</div>
+        </div>
+        
+        <div class="bmi-chart">
+            <h4><i class="fas fa-table"></i> BMI Classification</h4>
+            <div class="classification-grid">
+                <div class="grid-header">Category</div>
+                <div class="grid-header">BMI Range</div>
+                <div class="grid-header">Status</div>
+                
+                <!-- Underweight -->
+                <div class="grid-item cat underweight">Underweight</div>
+                <div class="grid-item">&lt; 18.5</div>
+                <div class="grid-item"><span class="status-indicator underweight"></span></div>
+                
+                <!-- Normal -->
+                <div class="grid-item cat normal">Healthy weight</div>
+                <div class="grid-item">18.5 - 24.9</div>
+                <div class="grid-item"><span class="status-indicator normal"></span></div>
+                
+                <!-- Overweight -->
+                <div class="grid-item cat overweight">Overweight</div>
+                <div class="grid-item">25 - 29.9</div>
+                <div class="grid-item"><span class="status-indicator overweight"></span></div>
+                
+                <!-- Obese -->
+                <div class="grid-item cat obese">Obese</div>
+                <div class="grid-item">≥ 30</div>
+                <div class="grid-item"><span class="status-indicator obese"></span></div>
+            </div>
+        </div>
+        
+        <div class="result-footer">
+            <p class="health-tip"><i class="fas fa-heartbeat"></i> <span id="health-tip">Maintain a balanced diet and regular exercise.</span></p>
+        </div>
+    </div>
+</div>
+    
+    <div class="content-section">
+        <h2 class="section-title">How BMI Calculator Works</h2>
+        <p>This calculator measures your Body Mass Index (BMI) based on your height and weight. BMI is a screening tool that categorizes individuals into weight categories that may indicate health risks.</p>
+        
+        <div class="instructions">
+            <h3><i class="fas fa-info-circle"></i> Instructions</h3>
+            <ol>
+                <li>Select your preferred measurement system (Metric or Imperial)</li>
+                <li>Enter your height and weight</li>
+                <li>Click "Calculate BMI" button</li>
+                <li>View your BMI result and category</li>
+                <li>Compare with the standard BMI classification table</li>
+            </ol>
+        </div>
+        
+        <div class="pros-cons">
+            <div class="pros">
+                <h3><i class="fas fa-check-circle"></i> Advantages</h3>
+                <ul class="pros-list">
+                    <li>Quick health screening tool</li>
+                    <li>Simple to use and understand</li>
+                    <li>Helps identify potential weight problems</li>
+                    <li>Free and accessible anytime</li>
+                </ul>
+            </div>
+            
+            <div class="cons">
+                <h3><i class="fas fa-exclamation-circle"></i> Limitations</h3>
+                <ul class="cons-list">
+                    <li>Doesn't account for muscle mass</li>
+                    <li>Doesn't consider body composition</li>
+                    <li>May not be accurate for athletes</li>
+                    <li>Doesn't differentiate between fat and muscle</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="faqs">
+            <h3><i class="fas fa-question-circle"></i> Frequently Asked Questions</h3>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is BMI? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>BMI (Body Mass Index) is a numerical value calculated from your weight and height. It provides a simple way to categorize individuals as underweight, normal weight, overweight, or obese.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is BMI accurate for everyone? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>BMI is a useful screening tool but has limitations. It may not accurately reflect body fat percentage in athletes, pregnant women, or the elderly. Always consult a healthcare professional for a comprehensive health assessment.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What should I do if my BMI is high? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>If your BMI indicates overweight or obesity, consider consulting a doctor or nutritionist. They can help develop a personalized plan including diet, exercise, and lifestyle changes.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</main> 
+        <!-- Placeholder for calculator categories -->
+        <div id="calculator-categories-placeholder"></div>
+<section class="about-section">
+        <div class="container">
+            <h1>About CalcPro</h1>
+            
+            <div class="intro">
+                <p>CalcPro offers an extensive collection of digital calculation tools designed to simplify complex computations across multiple disciplines. Our platform features specialized calculators for financial planning, health metrics, academic work, and everyday math needs, all available without cost or registration barriers.</p>
+                
+                <p>What began as a simple calculator project has grown into a comprehensive suite of over 200 specialized tools, with new additions regularly incorporated based on user feedback and emerging needs.</p>
+            </div>
+            
+            <div class="mission">
+                <h2><i class="fas fa-bullseye"></i> Our Mission</h2>
+                <p>We're committed to removing the complexity from calculations by providing intuitive, reliable tools that deliver instant results. Whether you're planning your retirement, calculating medication dosages, or solving advanced equations, CalcPro delivers accurate answers with just a few clicks.</p>
+            </div>
+            
+            <div class="features">
+                <div class="feature-card">
+                    <i class="fas fa-bolt"></i>
+                    <h3>Instant Results</h3>
+                    <p>Get accurate calculations in real-time without page reloads or delays</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-globe"></i>
+                    <h3>Global Accessibility</h3>
+                    <p>Tools adapted for regional differences (taxes, measurements, etc.)</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-lock-open"></i>
+                    <h3>No Barriers</h3>
+                    <p>Completely free with no registration or paywalls</p>
+                </div>
+            </div>
+            
+            <div class="pros-cons">
+                <div class="pros">
+                    <h2><i class="fas fa-check-circle"></i> Advantages</h2>
+                    <ul>
+                        <li><strong>Comprehensive collection</strong> - Over 200 specialized calculators</li>
+                        <li><strong>Mobile-optimized</strong> - Works perfectly on all devices</li>
+                        <li><strong>Privacy-focused</strong> - No tracking of personal calculations</li>
+                        <li><strong>Educational resources</strong> - Explanations with formulas used</li>
+                        <li><strong>Constant updates</strong> - Regular addition of new tools</li>
+                    </ul>
+                </div>
+                
+                <div class="cons">
+                    <h2><i class="fas fa-exclamation-triangle"></i> Limitations</h2>
+                    <ul>
+                        <li><strong>Internet required</strong> - No offline functionality</li>
+                        <li><strong>Advanced features</strong> - Some tools have learning curves</li>
+                        <li><strong>Regional specificity</strong> - Some calculators are designed exclusively for use in certain countries</li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+        <div class="faqs">
+            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">What is BMI? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>BMI (Body Mass Index) is a numerical value calculated from your weight and height. It provides a simple way to categorize individuals as underweight, normal weight, overweight, or obese.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">Is BMI accurate for everyone? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>BMI is a useful screening tool but has limitations. It may not accurately reflect body fat percentage in athletes, pregnant women, or the elderly. Always consult a healthcare professional for a comprehensive health assessment.</p>
+                </div>
+            </div>
+            
+            <div class="faq-item">
+                <div class="faq-question">What should I do if my BMI is high? <i class="fas fa-chevron-down"></i></div>
+                <div class="faq-answer">
+                    <p>If your BMI indicates overweight or obesity, consider consulting a doctor or nutritionist. They can help develop a personalized plan including diet, exercise, and lifestyle changes.</p>
+                </div>
+            </div>
+        </div>
+    </div>  
+            
+            <div class="development">
+                <h2><i class="fas fa-code"></i> Development Standards</h2>
+                <p>Every calculator undergoes a meticulous development process:</p>
+                <ol>
+                    <li>Initial research and formula verification</li>
+                    <li>Prototype development with multiple test cases</li>
+                    <li>Peer review by subject matter experts</li>
+                    <li>User interface refinement</li>
+                    <li>Public beta testing period</li>
+                    <li>Ongoing maintenance and updates</li>
+                </ol>
+                <p>We welcome feedback about any discrepancies - our team investigates all reported issues within 48 hours.</p>
+            </div>
+        </div>
+    </section>
+    <script src="js/footer.js" defer></script>
+    <script src="js/calculators.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+    fetch('calculator-categories.html')
+        .then(response => response.text())
+        .then(data => {
+            document.getElementById('calculator-categories-placeholder').innerHTML = data;
+        })
+        .catch(error => console.error('Error loading calculator categories:', error));
+    </script>
+</body>
+</html>
+
+
